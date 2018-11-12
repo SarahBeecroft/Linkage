@@ -24,19 +24,19 @@ nice /home/san/sbeecroft/atesta/home/san/atesta/src/samtools-0.1.19/samtools-0.1
 done
 
 cd $DATA_DIR
-nice perl vcf2linkdatagen.pl -annotfile annotHapMap2.txt -pop CEU -mindepth 20 -missingness 0 -idlist $file.vcflist.txt > $file.brlmm
-nice perl linkdatagen.pl -data m -pedfile $file.ped -whichSamplesFile $file.ws -callFile $file.brlmm -annotFile annotHapMap2.txt -pop CEU -binsize 0.3 -mindist 0.15 -prog me -outputDir $file.HapMap2
+perl vcf2linkdatagen.pl -annotfile annotHapMap2.txt -pop CEU -mindepth 20 -missingness 0 -idlist $file.vcflist.txt > $file.brlmm
+perl linkdatagen.pl -data m -pedfile $file.ped -whichSamplesFile $file.ws -callFile $file.brlmm -annotFile annotHapMap2.txt -pop CEU -binsize 0.3 -mindist 0.15 -prog me -outputDir $file.HapMap2
 cd $DATA_DIR/$file.HapMap2_merlin/genome/
 cp $DATA_DIR/$model.param.tbl temp.tbl
-nice $DATA_DIR/merlin -d merlin_autosome_$file.dat -p merlin_genome_$file.ped -f merlin_genome_$file.freq -m merlin_genome_$file.map --prefix merlin_autosome_$file --error
-nice $DATA_DIR/pedwipe -d merlin_autosome_$file.dat -p merlin_genome_$file.ped -e merlin_autosome_$file.err
+$DATA_DIR/merlin -d merlin_autosome_$file.dat -p merlin_genome_$file.ped -f merlin_genome_$file.freq -m merlin_genome_$file.map --prefix merlin_autosome_$file --error
+$DATA_DIR/pedwipe -d merlin_autosome_$file.dat -p merlin_genome_$file.ped -e merlin_autosome_$file.err
 mv wiped.dat merlin_autosome_wiped_$file.dat
 mv wiped.ped merlin_autosome_wiped_$file.ped
-nice $DATA_DIR/minx -d merlin_X_$file.dat -p merlin_genome_$file.ped -f merlin_genome_$file.freq -m merlin_genome_$file.map --prefix merlin_X_$file --error
-nice $DATA_DIR/pedwipe -d merlin_X_$file.dat -p merlin_genome_$file.ped -e merlin_X_$file.err
+$DATA_DIR/minx -d merlin_X_$file.dat -p merlin_genome_$file.ped -f merlin_genome_$file.freq -m merlin_genome_$file.map --prefix merlin_X_$file --error
+$DATA_DIR/pedwipe -d merlin_X_$file.dat -p merlin_genome_$file.ped -e merlin_X_$file.err
 mv wiped.dat merlin_X_wiped_$file.dat
 mv wiped.ped merlin_X_wiped_$file.ped
 rm wiped.freq
 mv temp.tbl $model.param.tbl
-nice $DATA_DIR/merlin -d merlin_autosome_wiped_$file.dat -p merlin_autosome_wiped_$file.ped -f merlin_genome_$file.freq -m merlin_genome_$file.map --smallswap --megabytes:9999 --founders --MarkerNames --pairs --ibd --extended --best --exp --model $model.param.tbl --pdf --tabulate --prefix merlin_autosome_$file
-nice $DATA_DIR/minx -d merlin_X_wiped_$file.dat -p merlin_X_wiped_$file.ped -f merlin_genome_$file.freq -m merlin_genome_$file.map --smallswap --megabytes:9999 --founders --MarkerNames --pairs --ibd --extended --best --exp --model $model.param.tbl --pdf --tabulate --prefix merlin_X_$file
+$DATA_DIR/merlin -d merlin_autosome_wiped_$file.dat -p merlin_autosome_wiped_$file.ped -f merlin_genome_$file.freq -m merlin_genome_$file.map --smallswap --megabytes:9999 --founders --MarkerNames --pairs --ibd --extended --best --exp --model $model.param.tbl --pdf --tabulate --prefix merlin_autosome_$file
+$DATA_DIR/minx -d merlin_X_wiped_$file.dat -p merlin_X_wiped_$file.ped -f merlin_genome_$file.freq -m merlin_genome_$file.map --smallswap --megabytes:9999 --founders --MarkerNames --pairs --ibd --extended --best --exp --model $model.param.tbl --pdf --tabulate --prefix merlin_X_$file
