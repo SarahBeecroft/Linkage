@@ -22,7 +22,7 @@ _git clone https://github.com/SarahBeecroft/Linkage.git_
 
 _cd Linkage_
 
-_chmod 760 *.sh *.pl merlin minx pedwipe pedstats pedmerge_
+_chmod 777 *.sh *.pl merlin minx pedwipe pedstats pedmerge_
 
 _cp /home/san/sbeecroft/Linkage_references/* . _
 
