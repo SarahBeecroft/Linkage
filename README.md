@@ -1,6 +1,6 @@
 # Linkage
 
-Reference files required for running linkage on TKI server are located in /home/san/SBeecroft/Linkage_refs
+Reference files required for running linkage on TKI server are located in /home/san/sbeecroft/Linkage_references
 
 Further information on the linkdatagen software package can be found here: 
 http://bioinf.wehi.edu.au/software/linkdatagen/
@@ -22,7 +22,9 @@ _git clone https://github.com/SarahBeecroft/Linkage.git_
 
 _cd Linkage_
 
-_chmod 760 *.sh_
+_chmod 760 *.sh *.pl merlin minx pedwipe pedstats pedmerge_
+
+_cp /home/san/sbeecroft/Linkage_references/* . _
 
 # Before using:
 You will need to create/upload the input files for the linkage program to use. The sequencing data input will be the bam files provided by the sequencing facility. These need to be uploaded into the Linkage working directory via filezilla or WinSCP. 
