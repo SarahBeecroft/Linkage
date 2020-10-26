@@ -59,9 +59,9 @@ In this pedigree, granpa and granny are what we call 'founders'- they are the fi
 After replacing each identifier with unique identifier and recoding sexes/affection status, this is what a basic space-delimited pedigree file would look like:
 
 <contents of basic.ped>
-1   D18-0001   0  0  1  1
-1   D18-0002   0  0  2  2
-1   D18-0003   0  0  1  1
+1   D18-0001   0  0  1  1 \n
+1   D18-0002   0  0  2  2 \n
+1   D18-0003   0  0  1  1 \n
 1   D18-0004   D18-0001  D18-0002  2  2
 1   D18-0005   D18-0003  D18-0004  2  2
 1   D18-0006   D18-0003  D18-0004  1  2
