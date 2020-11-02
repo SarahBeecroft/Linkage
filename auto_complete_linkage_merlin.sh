@@ -1,10 +1,12 @@
 #!/bin/bash
 
+echo "This is the correct script to use if you already have generated your HM.vcf files, ped, ws, and vcflist files. This script expects all inputs to be in the working directory, with Merlin binaries already installed to your PATH. If you need to generate the HM.vcfs, use the auto_samtools.sh script."
+echo
 echo "Enter the base name for your input files (i.e. family prefix, i.e OPDM): "  
 read input_prefix  
 echo "The base name is $input_prefix"  
 echo  
-echo "Enter inheritance pattern (AD for autosomal dominant, AR for autosomal recessive). X-linked is not available as a pre-made file: "  
+echo "Enter inheritance pattern (AD for autosomal dominant, AR for autosomal recessive, X-linked is not available as a pre-made file): "  
 read model
 echo "Inheritance pattern is $model"
 
