@@ -1,6 +1,0 @@
-/home/san/sbeecroft/old_linkdatagen/D18-0267.HM.vcf
-/home/san/sbeecroft/old_linkdatagen/D18-0268.HM.vcf
-/home/san/sbeecroft/old_linkdatagen/OPMD14.HM.vcf
-/home/san/sbeecroft/old_linkdatagen/D18-0269.HM.vcf
-/home/san/sbeecroft/old_linkdatagen/OPMD8.HM.vcf
-
