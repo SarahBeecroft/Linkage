@@ -6,7 +6,7 @@ echo "Enter the base name for your input files (i.e. family prefix, i.e OPDM): "
 read input_prefix  
 echo "The base name is $input_prefix"  
 echo  
-echo "Enter inheritance pattern (AD for autosomal dominant, AR for autosomal recessive, X-linked is not available as a pre-made file): "  
+echo "Enter inheritance pattern (AD for autosomal dominant, AR for autosomal recessive, XL for X-linked recessive): "  
 read model
 echo "Inheritance pattern is $model"
 
