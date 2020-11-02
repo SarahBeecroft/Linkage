@@ -33,5 +33,5 @@ cd $DATA_DIR
 
 while IFS= read -r file
 do
-$samtools_dir/samtools-0.1.19/samtools mpileup -d10000 -q13 -Q13 -gf $reference -l $annot_dir/annotHapMap2U.txt $DATA_DIR/$file.bam | $samtools_dir/bcftools/bcftools view -cg -t0.5 - > $DATA_DIR/$file.HM.vcf
+$samtools_dir/samtools-0.1.19/samtools mpileup -d10000 -q13 -Q13 -gf $reference -l $annot_dir/annotHapMap2U.txt $DATA_DIR/$file.bam | $samtools_dir/samtools-0.1.19/bcftools/bcftools view -cg -t0.5 - > $DATA_DIR/$file.HM.vcf
 done < "$sample_list"
