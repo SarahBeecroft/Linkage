@@ -1,6 +1,8 @@
 #!/bin/bash
 
 echo '''
+Used for making the HM.vcf files for the linkdatagen vcf2linkdatagen.pl and linkdatagen.pl programs. Requires space seperated list of sample names.
+
 Usage:
 ./auto_samtools4linkdatagen.sh <data_dir> <samtools_dir> <reference_dir> <sample_list> <annot_dir>
 
