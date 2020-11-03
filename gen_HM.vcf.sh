@@ -4,9 +4,11 @@ echo '''
 Used for making the HM.vcf files for the linkdatagen vcf2linkdatagen.pl and linkdatagen.pl programs. Requires space seperated list of sample names.
 
 Usage:
-./auto_samtools4linkdatagen.sh <data_dir> <samtools_dir> <reference> <sample_list> <annot_dir>
+./gen_HM.vcf.sh <data_dir> <samtools_dir> <reference> <sample_list> <annot_dir>
 
-Cheat: if your current working directory is what you would need to put in one of the above arguments, you can use $(pwd) instead of typing out the full name
+Cheat: if your current working directory is what you would need to put in one of the above arguments, you can use . instead of typing out the full name e.g. 
+./gen_HM.vcf.sh . . hg19.fa sample_list.txt .
+
 INFO:
 
 <data_dir> is the full path where your bam files are stored (must all be in same directory)
