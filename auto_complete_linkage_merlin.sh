@@ -12,10 +12,10 @@ echo "Inheritance pattern is $model"
 
 #model options are dominant or recessive. haven't made an x-linked file yet
 
-perl vcf2linkdatagen.pl -annotfile annotHapMap2U.txt -pop CEU -mindepth 20 -missingness 0 -idlist $input_prefix.vcflist.txt > $input_prefix.brlmm
-perl linkdatagen.pl -data m -pedfile $input_prefix.ped -whichSamplesFile $input_prefix.ws -callFile $input_prefix.brlmm -annotFile annotHapMap2U.txt -pop CEU -binsize 0.3 -mindist 0.15 -prog me -outputDir $input_prefix.HapMap2
+perl vcf2linkdatagen.pl -annotfile annotHapMap2U.txt -pop CEU -mindepth 20 -missingness 0 -variantCaller mpileup -idlist $input_prefix.vcflist.txt > $input_prefix.brlmm
+perl linkdatagen.pl -data m -pedfile $input_prefix.ped -whichSamplesFile $input_prefix.ws -callFile $input_prefix.brlmm -annotFile annotHapMap2U.txt -MendelErrors removeSNPs -pop CEU -binsize 0.3 -mindist 0.15 -prog me -outputDir $input_prefix.HapMap2
+cp $model.param.tbl $input_prefix.HapMap2_merlin/genome/temp.tbl
 cd $input_prefix.HapMap2_merlin/genome/
-cp $model.param.tbl temp.tbl
 merlin -d merlin_autosome_$input_prefix.dat -p merlin_genome_$input_prefix.ped -f merlin_genome_$input_prefix.freq -m merlin_genome_$input_prefix.map --prefix merlin_autosome_$input_prefix --error
 pedwipe -d merlin_autosome_$input_prefix.dat -p merlin_genome_$input_prefix.ped -e merlin_autosome_$input_prefix.err
 mv wiped.dat merlin_autosome_wiped_$input_prefix.dat
