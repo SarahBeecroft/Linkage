@@ -3,6 +3,7 @@ wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64.v369/twoBitToFa
 wget http://hgdownload.cse.ucsc.edu/goldenpath/hg19/bigZips/hg19.2bit
 chmod 777 twoBitToFa
 ./twoBitToFa hg19.2bit ucsc.hg19.fasta
+samtools faidx ucsc.hg19.fasta
 bwa index -b 10gb ucsc.hg19.fasta
 
 gsutil -m cp -r gs://genomics-public-data/references/hg38/v0/Homo_sapiens_assembly38.dict
