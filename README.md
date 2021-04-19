@@ -11,13 +11,15 @@ We use linkdatagen to manipulate genetic variants from either NGS/MPS data, or S
 
 `cd` into your desired directory (i.e. /data/ on nimbus)
 
-`git clone https://github.com/SarahBeecroft/Linkage.git
+```
+git clone https://github.com/SarahBeecroft/Linkage.git
 
 cd Linkage
 
 chmod 777 *.sh *.pl
 
-./DOWNLOADS.sh`
+./DOWNLOADS.sh
+```
 
 then install Merlin (instructions provided at end of DOWNLOADS.sh
 
@@ -49,7 +51,7 @@ example    brother  father   mother     m   affected
 
 These key values constitute the columns of the pedigree file. Because of restrictions in early genetic programs, text identifiers are usually replaced by unique numeric values. 
 
-`Male = 1, Female = 2, Unknown = 0. Unaffected = 1, Affected = 2, Unknown = 0. `
+`Male = 1, Female = 2, Unknown = 0. Unaffected = 1, Affected = 2, Unknown = 0.`
 
 In this pedigree, granpa and granny are what we call 'founders'- they are the first generation in the pedigree and therefore are allowed to have 'unknown' parents (i.e. mum and dad values of 0). father is also a founder, because he married into the family. All 'non-founders' require their parents to be specified by using the sample number of the mum or dad (in this case, mother has granpa and granny specified as her parents- 1 and 2 respectively
 
