@@ -9,7 +9,7 @@ echo
 echo "Enter inheritance pattern (AD for autosomal dominant, AR for autosomal recessive, XL for X-linked recessive): "  
 read model
 echo "Inheritance pattern is $model"
-
+conda activate merlin
 perl vcf2linkdatagen.pl -annotfile annotHapMap2U.txt -pop CEU -mindepth 20 -missingness 0 -variantCaller mpileup -idlist $input_prefix.vcflist.txt > $input_prefix.brlmm
 perl linkdatagen.pl -data m -pedfile $input_prefix.ped -whichSamplesFile $input_prefix.ws -callFile $input_prefix.brlmm -annotFile annotHapMap2U.txt -MendelErrors removeSNPs -pop CEU -binsize 0.3 -mindist 0.15 -prog me -outputDir $input_prefix.HapMap2
 cp $model.param.tbl $input_prefix.HapMap2_merlin/genome/temp.tbl
