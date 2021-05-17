@@ -20,21 +20,3 @@ gunzip annotHapMap2U.txt.gz
 gunzip annotHapMap3U.txt.gz
 gunzip hg19.fa.gz
 
-echo '''
-==============READ ME===================
-Should be complete, check the outputs
-
-To install Merlin using simple defaults, do the following:
-
-cd merlin-1.1.2
-make 
-make install
-
-=======================================
-
-To install samtools using simple defaults, do the following:
-
-cd samtools-0.1.19
-make 
-'''
-
