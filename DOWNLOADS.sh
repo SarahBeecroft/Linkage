@@ -9,9 +9,7 @@ wget https://sourceforge.net/projects/samtools/files/samtools/0.1.19/samtools-0.
 wget http://hgdownload.cse.ucsc.edu/goldenpath/hg19/bigZips/hg19.fa.gz
 wget http://bioinf.wehi.edu.au/software/linkdatagen/annotation/mps/annotHapMap3U.txt.gz
 wget http://bioinf.wehi.edu.au/software/linkdatagen/annotation/mps/annotHapMap2U.txt.gz
-wget https://csg.sph.umich.edu/abecasis/Merlin/download/merlin-1.1.2.tar.gz
-#samtools and gcc dependencies 
-sudo apt-get install -y autoconf automake make gcc perl zlib1g-dev libbz2-dev liblzma-dev libcurl4-gnutls-dev libssl-dev libncurses5-dev
+conda install -c bioconda merlin 
 
 echo 'Decompressing files'
 tar -xzvf mappingfiles_affy_build37.tgz
